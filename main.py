@@ -9,7 +9,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
 
-# --- Rutas --- #
 @app.route("/")
 @app.route("/juegos")
 def juegos():
@@ -48,7 +47,6 @@ def actualizar_juego():
     controlador_juegos.actualizar_juego(nombre, descripcion, precio, id)
     return redirect("/juegos")
 
-# --- Ejecutar la app --- #
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()  # Crea las tablas si no existen
